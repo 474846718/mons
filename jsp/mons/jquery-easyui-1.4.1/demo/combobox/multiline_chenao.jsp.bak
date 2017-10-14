@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>柜员业务量统计</title>
+	<title>Multiline ComboBox - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" href="../../css/mons/index.css" type="text/css">
+	<script src="../../js/mons/jquery.js" type="text/javascript"></script>
+	<script src="../../js/mons/jquery.table2.js" type="text/javascript"></script>
+	<script src="../../js/mons/grid.js" type="text/javascript"></script>
+	<script src="../../js/mons/mons.js" type="text/javascript"></script>
+	<script src="../../js/FusionCharts/FusionCharts.js" type="text/javascript"></script>
+	<jsp:include page="inc.jsp"></jsp:include>
+	<link rel="stylesheet" type="text/css" href="D:/JAVA/jquery-easyui-1.4.1/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="D:/JAVA/jquery-easyui-1.4.1/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="D:/JAVA/jquery-easyui-1.4.1/demo.css">
+	<script type="text/javascript" src="D:/JAVA/jquery-easyui-1.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="D:/JAVA/jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+	<script>
+		function loadData(){
+			$('#cc').combobox({
+				url:'combobox_data.json',
+				valueField:'id',
+				textField:'text'
+			});
+		}
+		function getText(){
+			$('#cc').combobox('getText');
+	
+		}
+		function getValue(){
+			var val = $('#cc').combobox('getValues');
+			alert(val);
+		}
+		function disable(){
+			$('#cc').combobox('disable');
+		}
+		function enable(){
+			$('#cc').combobox('enable');
+		}
+	</script>
+</head>
+<body>
+	<select class="easyui-combobox" name="state" id="cc" data-options="multiple:true,multiline:true" style="width:200px;height:50px">
+		<option value="AL">Alabama</option>
+		<option value="AK">Alaska</option>
+		<option value="AZ">Arizona</option>
+		<option value="AR">Arkansas</option>
+		<option value="CA">California</option>
+		<option value="CO">Colorado</option>
+		<option value="CT">Connecticut</option>
+		<option value="DE">Delaware</option>
+		<option value="FL">Florida</option>
+		<option value="GA">Georgia</option>
+		<option value="HI">Hawaii</option>
+		<option value="ID">Idaho</option>
+		<option value="IL">Illinois</option>
+		<option value="IN">Indiana</option>
+		<option value="IA">Iowa</option>
+		<option value="KS">Kansas</option>
+		<option value="KY">Kentucky</option>
+		<option value="LA">Louisiana</option>
+		<option value="ME">Maine</option>
+		<option value="MD">Maryland</option>
+		<option value="MA">Massachusetts</option>
+		<option value="MI">Michigan</option>
+		<option value="MN">Minnesota</option>
+		<option value="MS">Mississippi</option>
+		<option value="MO">Missouri</option>
+		<option value="MT">Montana</option>
+		<option value="NE">Nebraska</option>
+		<option value="NV">Nevada</option>
+		<option value="NH">New Hampshire</option>
+		<option value="NJ">New Jersey</option>
+		<option value="NM">New Mexico</option>
+		<option value="NY">New York</option>
+		<option value="NC">North Carolina</option>
+		<option value="ND">North Dakota</option>
+		<option value="OH" selected>Ohio</option>
+		<option value="OK">Oklahoma</option>
+		<option value="OR">Oregon</option>
+		<option value="PA">Pennsylvania</option>
+		<option value="RI">Rhode Island</option>
+		<option value="SC">South Carolina</option>
+		<option value="SD">South Dakota</option>
+		<option value="TN">Tennessee</option>
+		<option value="TX">Texas</option>
+		<option value="UT">Utah</option>
+		<option value="VT">Vermont</option>
+		<option value="VA">Virginia</option>
+		<option value="WA">Washington</option>
+		<option value="WV">West Virginia</option>
+		<option value="WI">Wisconsin</option>
+		<option value="WY">Wyoming</option>
+	</select>
+
+</body>
+</html>

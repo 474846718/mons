@@ -1,0 +1,92 @@
+.welcome{
+	width:814px;
+	height:460px;
+	margin-left:auto;margin-right:auto;
+	margin-top:30px;
+	background:url(../images/welcome_sys1/welcome_sys1_bg.jpg) left top no-repeat;
+	color:#CCCCCC;
+}
+.box1{
+	width:220px;
+	float:left;
+	margin-left:25px;margin-top:44px;
+}
+.box1 li{
+	width:90px;
+	height:75px;	
+	display:inline-block;
+	margin-right:10px;margin-bottom:15px;
+	text-align:center;
+}
+.link_true{
+	color:blue;
+	cursor: pointer;
+}
+.box1 li img{margin-bottom:3px;}
+.box2{
+	width:196px;
+	float:right;
+	margin-right:25px;margin-top:40px;
+}
+.box2 li{margin-bottom:30px;}
+.box2 li img{vertical-align:middle}
+.box3{
+	width:800px;
+	float:left;
+	margin-top:36px;
+}
+.box3 li{
+	display:inline;
+	margin-left:30px;margin-right:42px;	
+}
+.box3 li img{vertical-align:middle}
+.box4{
+	width:800px;
+	float:left;
+	margin-top:44px;
+}
+.box4 li{
+	display:inline;
+	margin-left:30px;margin-right:100px;
+}
+.box4 li img{vertical-align:middle}
+.box5{
+    float:left;
+	margin-top:55px;margin-left:120px;
+	text-align:center;
+}
+.box5 img{margin-bottom:6px;}
+.readme{
+	float:left;
+	width:800px;
+	height:auto;
+	background:#FFFFE1;
+	border:#FF9900 dotted 1px;
+	margin-top:30px;
+	color:#333;
+}
+.readme ul.left{
+	width:45%;
+	float:left;
+	margin-top:10px;margin-left:20px;margin-right:20px;
+}
+.readme ul.right{
+	width:45%;
+	float:right;
+	margin-top:10px;margin-left:20px;margin-right:20px;
+}
+.readme li{
+	line-height:150%;
+	margin-bottom:8px;
+}
+.readme li em{
+	font-weight:bold;
+}
+img.grayscale{
+	filter:url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+	-webkit-filter:grayscale(100%); /* chrome+ */
+	filter:grayscale(100%); /* Î´À´ä¯ÀÀÆ÷ */
+	filter:gray; /* ie6-8 */
+	filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);/*ie6-9 */
+	filter:Alpha(opacity=10);
+} 

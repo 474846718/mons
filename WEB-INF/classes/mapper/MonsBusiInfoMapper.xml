@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bomp.db.mapper.MonsBusiInfoMapper">
+  <resultMap id="BaseResultMap" type="com.bomp.db.entity.MonsBusiInfo">
+    <result column="BUSI_TYPE" jdbcType="CHAR" property="busiType" />
+    <result column="BUSI_DESC" jdbcType="VARCHAR" property="busiDesc" />
+    <result column="SYS_ID" jdbcType="CHAR" property="sysId" />
+  </resultMap>
+  
+  <resultMap id="BaseResultMap2" type="com.bomp.po.MONSBusiActionPo">
+    <result column="BUSI_TYPE" jdbcType="CHAR" property="busiType" />
+    <result column="BUSI_DESC" jdbcType="VARCHAR" property="busiDesc" />
+    <result column="SYS_ID" jdbcType="CHAR" property="sysId" />
+    <result column="SYS_NAME" jdbcType="CHAR" property="sysName" />
+  </resultMap>
+  
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    BUSI_TYPE, BUSI_DESC, SYS_ID
+  </sql>
+  <select id="selectByExample" parameterType="com.bomp.db.entity.MonsBusiInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from T_MONS_BUSIINFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.bomp.db.entity.MonsBusiInfoExample">
+    delete from T_MONS_BUSIINFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bomp.db.entity.MonsBusiInfo">
+    insert into T_MONS_BUSIINFO (BUSI_TYPE, BUSI_DESC, SYS_ID
+      )
+    values (#{busiType,jdbcType=CHAR}, #{busiDesc,jdbcType=VARCHAR}, #{sysId,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bomp.db.entity.MonsBusiInfo">
+    insert into T_MONS_BUSIINFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="busiType != null">
+        BUSI_TYPE,
+      </if>
+      <if test="busiDesc != null">
+        BUSI_DESC,
+      </if>
+      <if test="sysId != null">
+        SYS_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="busiType != null">
+        #{busiType,jdbcType=CHAR},
+      </if>
+      <if test="busiDesc != null">
+        #{busiDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="sysId != null">
+        #{sysId,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bomp.db.entity.MonsBusiInfoExample" resultType="java.lang.Integer">
+    select count(*) from T_MONS_BUSIINFO cn, T_MONS_SYSINFO si
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="_parameter != null" >
+      and cn.sys_id = si.sys_id
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update T_MONS_BUSIINFO
+    <set>
+      <if test="record.busiType != null">
+        BUSI_TYPE = #{record.busiType,jdbcType=CHAR},
+      </if>
+      <if test="record.busiDesc != null">
+        BUSI_DESC = #{record.busiDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sysId != null">
+        SYS_ID = #{record.sysId,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update T_MONS_BUSIINFO
+    set BUSI_TYPE = #{record.busiType,jdbcType=CHAR},
+      BUSI_DESC = #{record.busiDesc,jdbcType=VARCHAR},
+      SYS_ID = #{record.sysId,jdbcType=CHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <!-- <select id="selectByExampleLimit" resultMap="BaseResultMap" parameterType="com.bomp.db.entity.MonsBusiInfoExample" >
+    select * from (select a.*,rownum rn from ( 
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from T_MONS_BUSIINFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    )a 
+    <where>
+       <![CDATA[rownum <=#{end}]]>
+    </where>
+    ) 
+    <where>
+       <![CDATA[rn >#{begain}]]>
+    </where>
+  </select> -->
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.bomp.db.entity.MonsBusiInfo" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_MONS_BUSIINFO
+    where RTRIM(BUSI_TYPE) = #{busiType,jdbcType=CHAR}
+    and RTRIM(SYS_ID) = #{sysId,jdbcType=CHAR}
+  </select>
+  <select id="selectByExampleLimit" resultMap="BaseResultMap2" parameterType="com.bomp.db.entity.MonsBusiInfoExample" >
+    select * from (select a.*,rownum rn from ( 
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    BUSI_TYPE, BUSI_DESC, cn.SYS_ID, SYS_NAME
+    from T_MONS_BUSIINFO cn, T_MONS_SYSINFO si
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="_parameter != null" >
+      and cn.sys_id = si.sys_id
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+    )a 
+    <where>
+       <![CDATA[rownum <=#{end}]]>
+    </where>
+    ) 
+    <where>
+       <![CDATA[rn >#{begain}]]>
+    </where>
+  </select>
+</mapper>

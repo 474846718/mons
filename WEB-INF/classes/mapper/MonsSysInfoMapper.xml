@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bomp.db.mapper.MonsSysInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.bomp.db.entity.MonsSysInfo" >
+    <id column="SYS_ID" property="sysId" jdbcType="CHAR" />
+    <result column="SYS_NAME" property="sysName" jdbcType="VARCHAR" />
+    <result column="MONS_SYS_FLAG" property="monsSysFlag" jdbcType="VARCHAR" />
+    <result column="MONS_SYS_CYCLE" property="monsSysCycle" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    SYS_ID, SYS_NAME, MONS_SYS_FLAG, MONS_SYS_CYCLE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bomp.db.entity.MonsSysInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from T_MONS_SYSINFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_MONS_SYSINFO
+    where SYS_ID = #{sysId,jdbcType=CHAR}
+  </select>
+   <select id="selectByExampleLimit" resultMap="BaseResultMap" parameterType="com.bomp.db.entity.MonsSysInfoExample" >
+    select * from (select a.*,rownum rn from ( 
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from T_MONS_SYSINFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+      )a 
+    <where>
+       <![CDATA[rownum <=#{end}]]>
+    </where>
+    ) 
+    <where>
+       <![CDATA[rn >#{begain}]]>
+    </where>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from T_MONS_SYSINFO
+    where SYS_ID = #{sysId,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bomp.db.entity.MonsSysInfoExample" >
+    delete from T_MONS_SYSINFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bomp.db.entity.MonsSysInfo" >
+    insert into T_MONS_SYSINFO (SYS_ID, SYS_NAME, MONS_SYS_FLAG, 
+      MONS_SYS_CYCLE)
+    values (#{sysId,jdbcType=CHAR}, #{sysName,jdbcType=VARCHAR}, #{monsSysFlag,jdbcType=VARCHAR}, 
+      #{monsSysCycle,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bomp.db.entity.MonsSysInfo" >
+    insert into T_MONS_SYSINFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sysId != null" >
+        SYS_ID,
+      </if>
+      <if test="sysName != null" >
+        SYS_NAME,
+      </if>
+      <if test="monsSysFlag != null" >
+        MONS_SYS_FLAG,
+      </if>
+      <if test="monsSysCycle != null" >
+        MONS_SYS_CYCLE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sysId != null" >
+        #{sysId,jdbcType=CHAR},
+      </if>
+      <if test="sysName != null" >
+        #{sysName,jdbcType=VARCHAR},
+      </if>
+      <if test="monsSysFlag != null" >
+        #{monsSysFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="monsSysCycle != null" >
+        #{monsSysCycle,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bomp.db.entity.MonsSysInfoExample" resultType="java.lang.Integer" >
+    select count(*) from T_MONS_SYSINFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update T_MONS_SYSINFO
+    <set >
+      <if test="record.sysId != null" >
+        SYS_ID = #{record.sysId,jdbcType=CHAR},
+      </if>
+      <if test="record.sysName != null" >
+        SYS_NAME = #{record.sysName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.monsSysFlag != null" >
+        MONS_SYS_FLAG = #{record.monsSysFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.monsSysCycle != null" >
+        MONS_SYS_CYCLE = #{record.monsSysCycle,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update T_MONS_SYSINFO
+    set SYS_ID = #{record.sysId,jdbcType=CHAR},
+      SYS_NAME = #{record.sysName,jdbcType=VARCHAR},
+      MONS_SYS_FLAG = #{record.monsSysFlag,jdbcType=VARCHAR},
+      MONS_SYS_CYCLE = #{record.monsSysCycle,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bomp.db.entity.MonsSysInfo" >
+    update T_MONS_SYSINFO
+    <set >
+      <if test="sysName != null" >
+        SYS_NAME = #{sysName,jdbcType=VARCHAR},
+      </if>
+      <if test="monsSysFlag != null" >
+        MONS_SYS_FLAG = #{monsSysFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="monsSysCycle != null" >
+        MONS_SYS_CYCLE = #{monsSysCycle,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SYS_ID = #{sysId,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bomp.db.entity.MonsSysInfo" >
+    update T_MONS_SYSINFO
+    set SYS_NAME = #{sysName,jdbcType=VARCHAR},
+      MONS_SYS_FLAG = #{monsSysFlag,jdbcType=VARCHAR},
+      MONS_SYS_CYCLE = #{monsSysCycle,jdbcType=VARCHAR}
+    where SYS_ID = #{sysId,jdbcType=CHAR}
+  </update>
+</mapper>

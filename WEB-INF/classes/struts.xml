@@ -1,0 +1,42 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+        
+<struts>
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+    
+    <package name="struts2" extends="struts-default">    
+        <interceptors>            
+            <interceptor name="actionParamInterceptor" class="com.adtec.framework.common.interceptor.ActionParamInterceptor"></interceptor>
+            <interceptor name="accessInterceptor" class="com.adtec.framework.common.interceptor.AccessInterceptor"></interceptor>
+        
+            <interceptor-stack name="auctionStack">
+                <interceptor-ref name="defaultStack" />
+                <interceptor-ref name="actionParamInterceptor" />    
+				<!--        
+                <interceptor-ref name="accessInterceptor" />        
+				-->              
+            </interceptor-stack>
+        </interceptors>
+        
+        <default-interceptor-ref name="auctionStack" />
+        
+        <global-results>
+            <result name="error">login.jsp</result>
+            <result name="login">login.jsp</result>
+        </global-results>
+        
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error" />
+        </global-exception-mappings>
+        
+        <action name="*">
+            <result type="dispatcher">
+                <param name="location">{1}.jsp</param>
+            </result>
+        </action>       
+    </package>
+   
+	<include file="struts/struts_bomp.xml"></include> 
+    
+</struts>
+        

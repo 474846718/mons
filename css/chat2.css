@@ -1,0 +1,255 @@
+.chat2{
+	width:512px;
+	height:452px;
+	top:100px;
+	left:30%;
+	margin-left:auto;margin-right:auto;
+	position:fixed;
+	z-index:30;
+	background:url(../images/chat2_bg.png) left top no-repeat;
+	/*display:none;*/
+}
+.chat2_top{
+	width:100%;
+	height:67px;
+	margin-top:6px;
+	
+}
+.chat2_top_head{
+	width:52px;
+	height:49px;
+	text-align:center;
+	vertical-align:middle;
+	background:url(../images/chat2_person_bg.png) center center no-repeat;
+	float:left;
+	z-index:50px;
+	position: relative;
+	top:-25px;
+	left:15px;
+}
+.chat2_top_head img{
+	margin-top:6px;
+}
+.chat2_top_title{
+	width:100%;
+	height:27px;
+}
+.chat2_top_title p{
+	width:200px;
+	height:27px;
+	line-height:27px;
+	/*background:url(../images/chat2_logo.png) left top no-repeat;*/
+	padding-left:25px;
+	float:left;
+}
+.chat2_close{
+	width:34px;
+	height:27px;
+	display:block;
+	background:url(../images/chat2_close.png) center center no-repeat;
+	float:right;
+	margin-right:6px;
+}
+.chat2_close:hover{
+	background:url(../images/chat2_close_over.png) center center no-repeat;
+}
+.chat2_top_sys{
+	width:auto;
+	height:40px;
+	position: absolute;
+	z-index:30px;
+	left:15px;
+	
+}
+.chat2_top_sys a{
+	width:36px;
+	height:32px;
+	line-height:32px;
+	display:block;
+	float:left;
+	text-align:center;
+	margin-top:4px;margin-right:2px;
+}
+.chat2_top_sys a:hover{
+	background:url(../images/chat_sys_bg.png) center center no-repeat;
+}
+
+.chat2_txt1{
+	width:494px;
+	height:300px;
+	overflow-y:scroll;
+	margin-left:auto;margin-right:auto;
+	margin-top:3px;margin-bottom:3px;
+}
+.chat2_txt2{
+	width:100%;
+	height:28px;
+	text-align:center;
+	margin-top:4px;
+}
+.chat2_person1{
+	width:260px;
+	min-height:51px;
+	float:right;
+	margin-right:10px;
+}
+.chat2_person1_talk{
+	width:200px;
+	float:left;
+}
+.chat2_person1_talk_top{
+	width:200px;
+	min-height:51px;
+	background:url(../images/chat2_person1_talk.png) left top no-repeat;
+	color:#333333;
+}
+.chat2_person1_talk_top p{
+	padding:10px 20px 0 10px;
+	line-height:140%;
+}
+.chat2_person1_talk_bottom{
+	width:200px;
+	height:10px;
+	background:url(../images/chat2_person1_talk.png) left bottom no-repeat;
+}
+.chat2_person1_head{
+	width:60px;
+	height:80px;
+	float:right;
+	color:#999999;
+	text-align:center;
+}
+.chat2_person1_head span,.chat2_person2_head span{
+	width:60px;
+	height:60px;
+	display:block;
+	text-align:center;
+	vertical-align:middle;
+	background:url(../images/chat2_person_bg.png) center center no-repeat;
+}
+.chat2_person1_head span img,.chat2_person2_head span img{
+	margin-top:12px;
+}
+
+.chat2_person2{
+	width:260px;
+	min-height:51px;
+	float:left;
+	margin-left:10px;
+}
+.chat2_person2_head{
+	width:60px;
+	height:80px;
+	float:left;
+	color:#999999;
+	text-align:center;
+
+}
+.chat2_person2_talk{
+	width:200px;
+	float:right;
+}
+.chat2_person2_talk_top{
+	width:200px;
+	min-height:51px;
+	background:url(../images/chat2_person2_talk.png) left top no-repeat;
+}
+.chat2_person2_talk_top p{
+	padding:10px 10px 0 20px;
+	line-height:140%;
+}
+.chat2_person2_talk_bottom{
+	width:200px;
+	height:10px;
+	background:url(../images/chat2_person2_talk.png) left bottom no-repeat;
+}
+
+
+
+.chat2_tools{
+	width:480px;
+	height:30px;
+	margin-left:16px;
+}
+.chat2_tools_icon{
+	width:200px;
+}
+.chat2_tools li{
+	width:16px;
+	height:17px;
+	display:inline;
+	float:left;
+	overflow:;
+	margin:8px 5px 0 5px; 
+	position:relative;
+}
+.chat2_tools li a{
+	width:16px;
+	height:17px;
+	display:block;
+	overflow:hidden;
+	text-indent:-999px;
+	background:url(../images/chat2_tools_icon.png) no-repeat;
+}
+.chat2_tools .icon1 a{background-position:0px 0px;}
+.chat2_tools .icon2 a{background-position:-16px 0px;}
+.chat2_tools .icon3 a{background-position:-32px 0px;}
+.chat2_tools .icon4 a{background-position:-48px 0px;}
+.chat2_tools .icon5 a{background-position:-64px 0px;}
+.chat2_tools .icon1 a:hover{background-position:0px -17px;}
+.chat2_tools .icon2 a:hover{background-position:-16px -17px;}
+.chat2_tools .icon3 a:hover{background-position:-32px -17px;}
+.chat2_tools .icon4 a:hover{background-position:-48px -17px;}
+.chat2_tools .icon5 a:hover{background-position:-64px -17px;}
+.text1{
+	width:434px;
+	height:28px;
+	line-height:28px;
+	text-align:left;
+	padding-left:5px;
+	color:#333333;
+	background:url(../images/chat2_text.png) left top no-repeat;
+	border:none;
+}
+.button1{
+	width:46px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	color:#ffffff;
+	cursor:pointer;
+	background:url(../images/chat2_text.png) right top no-repeat;
+	border:none;
+}
+.button1_hover{
+	width:46px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	color:#ffffff;
+	cursor:pointer;
+	background:url(../images/chat2_text.png) right bottom no-repeat;
+	border:none;
+}
+.chat_button{
+	width:70px;
+	height:22px;
+	line-height:22px;
+	text-align:center;
+	color:#333333;
+	cursor:pointer;
+	background:url(../images/chat_button.png) left top no-repeat;
+	margin-right:2px;
+	border:none;
+}
+.chat_button_hover{
+	width:70px;
+	height:22px;
+	line-height:22px;
+	text-align:center;
+	color:#333333;
+	cursor:pointer;
+	background:url(../images/chat_button.png) left bottom no-repeat;
+	margin-right:2px;
+	border:none;
+}

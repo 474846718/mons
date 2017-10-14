@@ -1,0 +1,117 @@
+.chat{
+	min-width:430px;
+	width:430px;
+	top:150px;
+	left:30%;
+	margin-left:auto;margin-right:auto;
+	border:#3A5262 solid 1px;
+	background:#FFFFFF url(../images/chat_bg.jpg) right top repeat-y;
+	position:fixed;
+	z-index:30;
+	/*display:none;*/
+}
+.top{
+	width:100%;
+	height:60px;
+	background:url(../images/chat_top_bg.jpg);
+	
+}
+.top_title{
+	width:100%;
+	height:20px;
+	background:url(../images/chat_top_title_bg.png) left top no-repeat;
+}
+.top_title p{
+	width:200px;
+	height:20px;
+	line-height:20px;
+	background:url(../images/chat_logo.png) left top no-repeat;
+	padding-left:25px;
+	margin-left:10px;
+	float:left;
+}
+.close{
+	width:20px;
+	height:20px;
+	display:block;
+	background:url(../images/chat_close.png) center center no-repeat;
+	float:right;
+}
+.top_sys{
+	width:100%;
+	height:40px;
+	padding-left:10px;
+}
+.top_sys a{
+	width:36px;
+	height:32px;
+	line-height:32px;
+	display:block;
+	background:none;
+	float:left;
+	text-align:center;
+	margin-top:4px;margin-right:2px;
+}
+.top_sys a:hover{
+	background:url(../images/chat_sys_bg.png) center center no-repeat;
+}
+.txt1{
+	width:100%;
+	height:200px;
+	/*overflow-y:scroll;*/
+	padding:5px;
+}
+.txt2{
+	width:100%;
+	height:60px;
+	/*overflow-y:auto;*/
+	padding:5px;
+}
+.tools{
+	width:100%;
+	height:28px;
+	background:#DAEAF8 url(../images/chat_tools_bg.jpg) left top no-repeat;
+}
+.button_box{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	background:#DAEAF8 url(../images/chat_tools_bg.jpg) left top no-repeat;
+	text-align:right;
+}
+.chat_button{
+	width:70px;
+	height:22px;
+	line-height:22px;
+	text-align:center;
+	color:#333333;
+	cursor:pointer;
+	background:url(../images/chat_button.png) left top no-repeat;
+	margin-right:2px;
+	border:none;
+}
+.chat_button_hover{
+	width:70px;
+	height:22px;
+	line-height:22px;
+	text-align:center;
+	color:#333333;
+	cursor:pointer;
+	background:url(../images/chat_button.png) left bottom no-repeat;
+	margin-right:2px;
+	border:none;
+}
+.textarea1{
+	width:420px;
+	height:200px;
+	border:none;
+	background:none;
+	color:#333333;
+}
+.textarea2{
+	width:420px;
+	height:60px;
+	border:none;
+	background:none;
+	color:#333333;
+}

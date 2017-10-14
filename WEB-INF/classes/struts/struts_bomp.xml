@@ -1,0 +1,134 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+        	
+<struts>    
+	<package name="uckDupAction" extends="struts2">
+		<action name="dup_query_button" class="com.adtec.application.uck.action.UckDupAction" method="query_button_OnClick">
+        </action>
+	</package>
+	
+	<package name="Login" extends="struts2">
+		<action name="Login_init" class="com.bomp.action.LoginAction" method="init">
+		
+        </action>
+     	<action name="Login_login" class="com.bomp.action.LoginAction" method="login">
+ 	        <result name="success" type="dispatcher">./jsp/frame/mainFrame.jsp</result>
+ 	        <result name="error" type="dispatcher">login.jsp?message=${po.message}</result>
+        </action>
+        
+        <action name="Login_logout" class="com.bomp.action.LoginAction" method="logout">
+        </action>
+        
+        <action name="Login_aplSys" class="com.bomp.action.LoginAction" method="aplSys">
+        </action>
+        
+        <action name="Login_gotoAplsys" class="com.bomp.action.LoginAction" method="gotoAplsys">
+            <result name="reload" type="redirect">${po.apiSysUrl}?st=${po.st}&amp;apiSysId=${po.apiSysId}&amp;userId=${po.userId}&amp;roleId=${po.roleId}</result>
+        </action>
+        
+        <action name="Login_bompFrameInit" class="com.bomp.action.BompFrameAction" method="init">
+            <result name="reload" type="redirect">${po.apiSysUrl}?apiSysId=${po.apiSysId}&amp;userId=${po.userId}&amp;roleId=${po.roleId}</result>
+        </action>
+        
+        <action name="Login_loginOneConfirm" class="com.bomp.action.LoginAction" method="loginOneConfirm">
+        </action>
+        
+        <action name="Login_question" class="com.bomp.action.LoginAction" method="question">
+        </action>
+        
+        <action name="Login_xgmm" class="com.bomp.action.LoginAction" method="xgmm">
+        </action>
+        
+        <action name="Login_mmzhqd" class="com.bomp.action.LoginAction" method="mmzhqd">
+        </action>
+        
+        <action name="Login_exit" class="com.bomp.action.LoginAction" method="exit">
+            <result name="success" type="dispatcher">login.jsp</result>
+        </action>
+        
+        
+        
+	</package> 	
+	
+	<package name="MONS" extends="struts2">
+		
+		<action name="SysInfoInit" class="com.bomp.action.MONSSysAction" method="init">
+        </action>
+        <action name="CntInfoInit" class="com.bomp.action.MONSCntInfoAction" method="init">
+        </action>
+        <action name="BrchInfoInit" class="com.bomp.action.MONSBrchInfoAction" method="init">
+        </action>
+        <action name="SysInfoConfirm" class="com.bomp.action.MONSSysAction" method="confirm">
+        </action> 	
+        	
+		<action name="SysInfoCancel" class="com.bomp.action.MONSSysAction" method="cancel">
+        </action>
+        		
+		<action name="SysInfoQuery" class="com.bomp.action.MONSSysAction" method="query">
+        </action>
+        
+        <action name="SysInfoQueryAll" class="com.bomp.action.MONSSysAction" method="selectAll">
+        </action>
+        
+        <action name="ChannelInfoInit" class="com.bomp.action.MONSChannelAction" method="init">
+        </action>
+        
+        <action name="ChannelInfoQuery" class="com.bomp.action.MONSChannelAction" method="query">
+        </action>
+        
+        <action name="ChannelInfoConfirm" class="com.bomp.action.MONSChannelAction" method="confirm">
+        </action>
+        
+        <action name="BusiInfoInit" class="com.bomp.action.MONSBusiAction" method="init">
+        </action>
+        
+        <action name="BusiInfoQuery" class="com.bomp.action.MONSBusiAction" method="query">
+        </action>
+        
+        <action name="BusiInfoConfirm" class="com.bomp.action.MONSBusiAction" method="confirm">
+        </action>
+        
+        <action name="ChanBusiRelaInit" class="com.bomp.action.MONSChanBusiRelaAction" method="init">
+        </action>
+        
+        <action name="GetMonsWarnPara" class="com.bomp.action.MONSWarnParaAction" method="getPara">
+        </action>
+        
+        <action name="MonsAvgParaInit" class="com.bomp.action.MONSAvgParaAction" method="init">
+        </action>
+        
+        <action name="AvgParaConfirm" class="com.bomp.action.MONSAvgParaAction" method="confirm">
+        </action>
+        
+        <action name="WarnParaConfirm" class="com.bomp.action.MONSWarnParaAction" method="confirm">
+        </action>
+        
+        <action name="MONSTran" class="com.bomp.action.MONSAction" method="RequestMonsServer">
+        </action>
+        
+        <action name="TrancodeInfoInit" class="com.bomp.action.MONSTrancodeAction" method="init">
+         <result name="success" type="dispatcher">trancodeInfo.jsp</result>
+        </action>
+        
+        <action name="TrancodeInfoConfirm" class="com.bomp.action.MONSTrancodeAction" method="confirm">
+        </action> 	
+        	
+		<action name="TrancodeInfoCancel" class="com.bomp.action.MONSTrancodeAction" method="cancel">
+        </action>
+        		
+		<action name="TrancodeInfoQuery" class="com.bomp.action.MONSTrancodeAction" method="query">
+        </action>
+        
+        <action name="TrancodeInfoQueryAll" class="com.bomp.action.MONSTrancodeAction" method="selectAll">
+        </action>
+        
+        <action name="ChannelInfoQueryAll" class="com.bomp.action.MONSChannelAction" method="selectAll">
+        </action>
+        
+        <action name="BusiInfoQueryAll" class="com.bomp.action.MONSBusiAction" method="selectAll">
+        </action>
+        
+	</package>
+ </struts>
+ 
+ 

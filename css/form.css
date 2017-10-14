@@ -1,0 +1,199 @@
+@charset "utf-8";
+/* CSS Document */
+
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote{ 
+	margin:0;
+	padding:0;	
+}
+html,body{width:100%;height:auto;color:#333333;font-size:12px;}
+/*html {overflow-x:hidden; }*/
+input,textarea,select{color:#666666;/*font-size:12px;*/}
+td, th{/*font-size:12px;*/padding:0;}
+table {
+	border-collapse:collapse;
+	/*border-spacing:0;*/
+}
+fieldset,img { 
+	border:none;
+}
+a{color:#333333;text-decoration:none; outline:none; cursor:pointer;}
+a:hover{color:#FF6600; text-decoration:none;}
+strong{
+	font-weight:bold;
+}
+ul, ol, li {
+	list-style:none;
+}
+.fr{text-align:right;}
+.fl{text-align:left;}
+.fc{text-align:center;}
+.bg{background:#ECF2F6;}
+/* End Global Reset*/
+
+.table_form_title{
+	width:96%;
+	margin-left:auto;margin-right:auto;
+	margin-top:10px;
+	border:#95B8E7 solid 1px;
+}
+.table_form_title td{
+	height:26px;
+	background:url(../images/table_title_bg.jpg);
+	text-align:left;
+	color:#0E2D5F;
+	font-weight:bold;
+}
+.table_form_title p{
+	padding-left:23px;
+	margin-left:10px;
+	background:url(../images/table_icon1.png) left center no-repeat;
+}
+.table_form_box{
+	width:96%;
+	margin-left:auto;margin-right:auto;
+	border:#95B8E7 solid 1px;
+	border-top:none;
+}
+.table_form, .table_form2{
+	width:100%;
+	margin-top:5px;margin-bottom:5px;
+}
+.table_form th{
+	width:150px;
+	height:26px;
+	padding-right:5px;
+	text-align:right;
+	border-bottom:#666 dotted 1px;
+	font-weight:100;
+}
+.table_form td{
+	height:26px;
+	text-align:left;
+	border-bottom:#666 dotted 1px;
+}
+.table_form .item{
+	height:20px;
+	font-weight:bold;
+	color:#FFFFFF;
+	background:url(../images/black_alpha20.png);
+}
+.table_form2 th{
+	width:150px;
+	height:26px;
+	padding-right:5px;
+	text-align:right;
+	font-weight:100;
+}
+.table_form3{
+	width:auto;	
+	border-top:none;
+}
+.table_form3 td{
+	height:26px;
+	text-align:left;
+}
+.table_form3 th{
+	width:150px;
+	height:26px;
+	padding-right:5px;
+	text-align:right;
+	font-weight:100;
+}
+.table_form2 td{
+	height:26px;
+	text-align:left;
+}
+
+.form_text{
+	height:22px;
+	line-height:22px;
+	padding-left:3px;
+	border:#95B8E7 solid 1px;
+	background:#FFFFFF;
+}
+.form_button1{
+	width:73px;
+	height:28px;
+	line-height:28px;
+	display:inline-block;
+	background:url(../images/form_button1.png) center top no-repeat;
+	color:#333333;
+	font-size:14px;
+	text-align:center;
+}
+.form_button1:hover{
+	width:73px;
+	height:28px;
+	line-height:28px;
+	display:inline-block;
+	background:url(../images/form_button1.png) center bottom no-repeat;
+	color:#333333;
+	font-size:14px;
+	text-align:center;
+}
+.form_button2{
+	width:82px;
+	height:32px;
+	line-height:30px;
+	display:inline-block;
+	background:url(../images/form_button2.png) center top no-repeat;
+	color:#FFFFFF;
+	font-size:14px;
+	font-weight:bold;
+	margin-right:10px;
+	margin-top:10px;margin-bottom:10px;
+}
+.form_button2:hover{
+	width:82px;
+	height:32px;
+	line-height:30px;
+	display:inline-block;
+	background:url(../images/form_button2.png) center bottom no-repeat;
+	color:#FFFFFF;
+	font-size:14px;
+	font-weight:bold;
+	margin-right:10px;
+	margin-top:10px;margin-bottom:10px;
+}
+.form_button3{
+	width:82px;
+	height:28px;
+	line-height:28px;
+	display:inline-block;
+	background:url(../images/form_button3.png) center top no-repeat;
+	color:#333333;
+	text-align:center;
+	padding-left:10px;
+}
+.form_button3:hover{
+	width:82px;
+	height:28px;
+	line-height:28px;
+	display:inline-block;
+	background:url(../images/form_button3.png) center bottom no-repeat;
+	color:#FFFFFF;
+	font-weight:bold;
+	text-align:center;
+	padding-left:10px;
+}
+.form_button4{
+	width:82px;
+	height:28px;
+	line-height:28px;
+	display:inline-block;
+	background:url(../images/form_button4.png) center top no-repeat;
+	color:#333333;
+	text-align:center;
+	padding-left:10px;
+}
+.form_button4:hover{
+	width:82px;
+	height:28px;
+	line-height:28px;
+	display:inline-block;
+	background:url(../images/form_button4.png) center bottom no-repeat;
+	color:#FFFFFF;
+	font-weight:bold;
+	text-align:center;
+	padding-left:10px;
+}

@@ -1,0 +1,10 @@
+2017-04-11 10:19:06,481 DEBUG - SqlSessionFactoryBean.buildSqlSessionFactory(358) | Property 'configLocation' not specified, using default MyBatis Configuration
+2017-04-11 10:19:06,930 DEBUG - SqlSessionFactoryBean.buildSqlSessionFactory(468) | Parsed mapper file: 'file [/home/tomcat/public/tomcat/webapps/mons/WEB-INF/classes/mapper/MonsWarnParaMapper.xml]'
+2017-04-11 10:19:06,955 DEBUG - SqlSessionFactoryBean.buildSqlSessionFactory(468) | Parsed mapper file: 'file [/home/tomcat/public/tomcat/webapps/mons/WEB-INF/classes/mapper/MonsAvgParaMapper.xml]'
+2017-04-11 10:19:06,973 DEBUG - SqlSessionFactoryBean.buildSqlSessionFactory(468) | Parsed mapper file: 'file [/home/tomcat/public/tomcat/webapps/mons/WEB-INF/classes/mapper/MonsBusiInfoMapper.xml]'
+2017-04-11 10:19:06,987 DEBUG - SqlSessionFactoryBean.buildSqlSessionFactory(468) | Parsed mapper file: 'file [/home/tomcat/public/tomcat/webapps/mons/WEB-INF/classes/mapper/MonBrchInfoMapper.xml]'
+2017-04-11 10:19:07,003 DEBUG - SqlSessionFactoryBean.buildSqlSessionFactory(468) | Parsed mapper file: 'file [/home/tomcat/public/tomcat/webapps/mons/WEB-INF/classes/mapper/MonsChannelInfoMapper.xml]'
+2017-04-11 10:19:07,022 DEBUG - SqlSessionFactoryBean.buildSqlSessionFactory(468) | Parsed mapper file: 'file [/home/tomcat/public/tomcat/webapps/mons/WEB-INF/classes/mapper/MonsTrancodeInfoMapper.xml]'
+2017-04-11 10:19:07,035 DEBUG - SqlSessionFactoryBean.buildSqlSessionFactory(468) | Parsed mapper file: 'file [/home/tomcat/public/tomcat/webapps/mons/WEB-INF/classes/mapper/MonsChanBusiRelaMapper.xml]'
+2017-04-11 10:19:07,047 DEBUG - SqlSessionFactoryBean.buildSqlSessionFactory(468) | Parsed mapper file: 'file [/home/tomcat/public/tomcat/webapps/mons/WEB-INF/classes/mapper/MonCntInfoMapper.xml]'
+2017-04-11 10:19:07,061 DEBUG - SqlSessionFactoryBean.buildSqlSessionFactory(468) | Parsed mapper file: 'file [/home/tomcat/public/tomcat/webapps/mons/WEB-INF/classes/mapper/MonsSysInfoMapper.xml]'

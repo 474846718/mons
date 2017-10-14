@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bomp.db.mapper.MonsAvgParaMapper" >
+  <resultMap id="BaseResultMap" type="com.bomp.db.entity.MonsAvgPara" >
+    <result column="CHANNEL_ID" property="channelId" jdbcType="CHAR" />
+    <result column="CHANNEL_DESC" property="channelDesc" jdbcType="VARCHAR" />
+    <result column="BEG_TIME" property="begTime" jdbcType="CHAR" />
+    <result column="END_TIME" property="endTime" jdbcType="CHAR" />
+    <result column="PARA0" property="para0" jdbcType="CHAR" />
+    <result column="ENABLE" property="enable" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    CHANNEL_ID, CHANNEL_DESC, BEG_TIME, END_TIME, PARA0, ENABLE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bomp.db.entity.MonsAvgParaExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from T_AVG_PARA
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.bomp.db.entity.MonsAvgParaExample" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_AVG_PARA
+    where RTRIM(CHANNEL_ID) = #{channelId,jdbcType=CHAR}
+  </select>
+    <select id="selectByExampleLimit" resultMap="BaseResultMap" parameterType="com.bomp.db.entity.MonsAvgParaExample" >
+    select * from (select a.*,rownum rn from ( 
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    CHANNEL_ID, CHANNEL_DESC, BEG_TIME, END_TIME, PARA0,ENABLE
+    from T_AVG_PARA
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+      )a 
+    <where>
+       <![CDATA[rownum <=#{end}]]>
+    </where>
+    ) 
+    <where>
+       <![CDATA[rn >#{begain}]]>
+    </where>
+  </select>
+   <update id="updateByPrimaryKey" parameterType="com.bomp.db.entity.MonsAvgPara" >
+    update T_AVG_PARA
+    set CHANNEL_ID = #{channelId,jdbcType=CHAR},
+      CHANNEL_DESC = #{channelDesc,jdbcType=CHAR}, 
+      BEG_TIME = #{begTime,jdbcType=CHAR},
+      END_TIME = #{endTime,jdbcType=CHAR},
+      PARA0 = #{para0,jdbcType=CHAR},
+      ENABLE = #{enable,jdbcType=CHAR}
+      <if test="_parameter != null" >
+      	<include refid="Update_By_Example_Where_Clause" />
+      </if>
+  </update>
+  <delete id="deleteByExample" parameterType="com.bomp.db.entity.MonsAvgParaExample" >
+    delete from T_AVG_PARA
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bomp.db.entity.MonsAvgPara" >
+    insert into T_AVG_PARA (CHANNEL_ID, CHANNEL_DESC, BEG_TIME, 
+      END_TIME, PARA0, ENABLE)
+    values (#{channelId,jdbcType=CHAR}, #{channelDesc,jdbcType=VARCHAR}, #{begTime,jdbcType=CHAR}, 
+      #{endTime,jdbcType=CHAR}, #{para0,jdbcType=CHAR}, #{enable,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bomp.db.entity.MonsAvgPara" >
+    insert into T_AVG_PARA
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="channelId != null" >
+        CHANNEL_ID,
+      </if>
+      <if test="channelDesc != null" >
+        CHANNEL_DESC,
+      </if>
+      <if test="begTime != null" >
+        BEG_TIME,
+      </if>
+      <if test="endTime != null" >
+        END_TIME,
+      </if>
+      <if test="para0 != null" >
+        PARA0,
+      </if>
+      <if test="enable != null" >
+        ENABLE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="channelId != null" >
+        #{channelId,jdbcType=CHAR},
+      </if>
+      <if test="channelDesc != null" >
+        #{channelDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="begTime != null" >
+        #{begTime,jdbcType=CHAR},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=CHAR},
+      </if>
+      <if test="para0 != null" >
+        #{para0,jdbcType=CHAR},
+      </if>
+      <if test="enable != null" >
+        #{enable,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bomp.db.entity.MonsAvgParaExample" resultType="java.lang.Integer" >
+    select count(*) from T_AVG_PARA
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update T_AVG_PARA
+    <set >
+      <if test="record.channelId != null" >
+        CHANNEL_ID = #{record.channelId,jdbcType=CHAR},
+      </if>
+      <if test="record.channelDesc != null" >
+        CHANNEL_DESC = #{record.channelDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.begTime != null" >
+        BEG_TIME = #{record.begTime,jdbcType=CHAR},
+      </if>
+      <if test="record.endTime != null" >
+        END_TIME = #{record.endTime,jdbcType=CHAR},
+      </if>
+      <if test="record.para0 != null" >
+        PARA0 = #{record.para0,jdbcType=CHAR},
+      </if>
+      <if test="record.enable != null" >
+        ENABLE = #{record.enable,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update T_AVG_PARA
+    set CHANNEL_ID = #{record.channelId,jdbcType=CHAR},
+      CHANNEL_DESC = #{record.channelDesc,jdbcType=VARCHAR},
+      BEG_TIME = #{record.begTime,jdbcType=CHAR},
+      END_TIME = #{record.endTime,jdbcType=CHAR},
+      PARA0 = #{record.para0,jdbcType=CHAR},
+      ENABLE = #{record.enable,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

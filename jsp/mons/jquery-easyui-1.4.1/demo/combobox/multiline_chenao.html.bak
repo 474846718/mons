@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Multiline ComboBox - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Multiline ComboBox</h2>
+	<p>This example shows how to create a multiline ComboBox.</p>
+	<div style="margin:20px 0"></div>
+	<select class="easyui-combobox" name="state" id="cc" data-options="multiple:true,multiline:false" style="width:200px;height:20px">
+		<option value="AL">阿毛</option>
+		<option value="AK">阿海</option>
+		<option value="AZ">小张</option>
+		<option value="AR">小刘</option>
+	</select>
+
+</body>
+</html>

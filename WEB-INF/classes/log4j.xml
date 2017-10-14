@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    
+    <!-- 设置控制台日志 -->
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="%d %p - %C{1}.%M(%L) | %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- 设置主文件输出日志 -->
+    <appender name="MFILE" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="bomp.log"/>
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                value="%d %p - %C{1}.%M(%L) | %m%n"/>
+        </layout>
+    </appender>
+        
+    <logger name="org.jasig">
+        <level value="ERROR"/>
+    </logger>
+    
+    <logger name="org.apache">
+        <level value="ERROR"/>
+    </logger>
+    
+    <logger name="org.springframework">
+        <level value="ERROR"/>
+    </logger>
+    
+    <logger name="com.adtec">
+        <level value="DEBUG" />
+    </logger>
+    
+    <logger name="com.bomp">
+        <level value="DEBUG" />
+    </logger>
+    
+    <!-- 设置接收部分日志输出的通道 -->
+    <logger name="test.adtec">
+       <level value="DEBUG" />
+       <appender-ref ref="TFILE"/>        
+    </logger>
+
+    <!-- 设置接收所有日志输出的通道 --> 
+    <root>  
+        <level value="DEBUG" />  
+        <appender-ref ref="CONSOLE"/>   
+        <appender-ref ref="MFILE"/>        
+    </root>
+    
+</log4j:configuration>
